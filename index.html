@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+		<link rel="stylesheet" href="styles.css" />
+		<style>
+			.custom-video-wrapper {
+				width: 100% !important;
+				height: 300px !important;
+			}
+
+			.custom-video-wrapper .video-js .vjs-tech {
+				object-fit: contain !important;
+			}
+
+			.video-js .vjs-poster {
+				width: 100% !important;
+			}
+
+			.video-js .vjs-poster img {
+				object-fit: cover !important;
+			}
+
+			.custom-video-dimensions {
+				height: 100% !important;
+				width: 100% !important;
+			}
+
+			@media screen and (min-width: 900px) {
+				.custom-video-wrapper {
+					height: 650px !important;
+					width: 100% !important;
+				}
+
+				.custom-video-wrapper .video-js {
+					height: 100% !important;
+					width: 100% !important;
+				}
+
+				.custom-video-wrapper .video-js .vjs-tech {
+					object-fit: cover !important;
+				}
+			}
+		</style>
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="custom-video-wrapper">
+			<video
+				id="custom-video"
+				class="video-js"
+				controls
+				autoplay="true"
+				preload="auto"
+				poster="https://res.cloudinary.com/da7sir5sq/image/upload/v1691611204/thumbnail_wejveh.png"
+				data-setup='{ "muted": true }'
+			>
+				<source
+					src="https://res.cloudinary.com/da7sir5sq/video/upload/v1691603734/Founder_s_video_1_znijwd.mp4"
+					type="video/mp4"
+				/>
+				<p class="vjs-no-js">
+					To view this video please enable JavaScript, and consider upgrading to
+					a web browser that
+					<a href="https://videojs.com/html5-video-support/" target="_blank"
+						>supports HTML5 video</a
+					>
+				</p>
+			</video>
+		</div>
+
+		<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+		<script>
+			var player = videojs('custom-video');
+
+			// player.autoplay(true);
+			// player.muted(true);
+			player.playsinline(true);
+
+			// player.ready(function () {
+			// 	this.mute();
+			// });
+		</script>
+	</body>
+</html>
